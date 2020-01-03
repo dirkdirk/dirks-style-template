@@ -1,0 +1,205 @@
+@use 'sass:color';
+
+/////////////////////////////////////////////////////////////////////////////
+// GLOBAL VARIABLES
+// Primary colors are used primarily for background and font colors.
+$primary-base-color:     #ccc;
+$primary-white-color:    color.scale($primary-base-color, $lightness: 75%);
+$primary-lightest-color: color.scale($primary-base-color, $lightness: 65%);
+$primary-lighter-color:  color.scale($primary-base-color, $lightness: 25%);
+$primary-darker-color:   color.scale($primary-base-color, $lightness: -15%);
+$primary-darkest-color:  color.scale($primary-base-color, $lightness: -50%);
+$primary-black-color:    color.scale($primary-base-color, $lightness: -85%);
+
+// Info colors are used to indicate positive things.
+$info-base-color:     #007bff;
+$info-lightest-color: color.scale($info-base-color, $lightness: 25%);
+$info-lighter-color:  color.scale($info-base-color, $lightness: 15%);
+$info-darker-color:   color.scale($info-base-color, $lightness: -15%);
+$info-darkest-color:  color.scale($info-base-color, $lightness: -40%);
+
+// Success colors are used to indicate positive things.
+$success-base-color:     #28a745;
+$success-lightest-color: color.scale($success-base-color, $lightness: 25%);
+$success-lighter-color:  color.scale($success-base-color, $lightness: 15%);
+$success-darker-color:   color.scale($success-base-color, $lightness: -15%);
+$success-darkest-color:  color.scale($success-base-color, $lightness: -40%);
+
+// Warn colors are used to highlight important features.
+$warn-base-color:        #fa2;
+$warn-lightest-color:    color.scale($warn-base-color, $lightness: 50%);
+$warn-lighter-color:     color.scale($warn-base-color, $lightness: 25%);
+$warn-darker-color:      color.scale($warn-base-color, $lightness: -15%);
+$warn-darkest-color:     color.scale($warn-base-color, $lightness: -50%);
+
+// Danger colors are primarily used to highlight permanent effects.
+$danger-base-color:      #d12;
+$danger-lightest-color:  color.scale($danger-base-color, $lightness: 50%);
+$danger-lighter-color:   color.scale($danger-base-color, $lightness: 25%);
+$danger-darker-color:    color.scale($danger-base-color, $lightness: -15%);
+$danger-darkest-color:   color.scale($danger-base-color, $lightness: -50%);
+
+// Define standard colors.
+$info-color:    $info-base-color;
+$success-color: $success-base-color;
+$warn-color:    $warn-base-color;
+$danger-color:  $danger-base-color;
+
+// Font families and colors
+$font-family-site:      'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
+$font-family-monospace: Lucida Console, Courier, monospace;
+$text-color:            $primary-black-color;
+
+// Box shadows
+$box-shadow-btn-focus: 0 0 2pt 2pt $primary-darker-color;
+
+// Site Header
+// Major
+$site-header-bg-color:                   $primary-darkest-color;
+$site-header-font-color:                 $primary-base-color;
+$site-header-link-color:                 $primary-lighter-color;
+$site-header-link-active-color:          $primary-lightest-color;
+$site-header-link-visited-color:         $primary-lighter-color;
+$site-header-link-font-size:             1.4rem;
+$site-header-link-font-weight:           300;
+$site-header-drop-down-bg-color:         $primary-darkest-color;
+$site-header-drop-down-font-color:       $primary-base-color;
+$site-header-drop-down-item-hover-color: $primary-lightest-color;
+$site-header-drop-down-border:           1px solid $primary-darker-color;
+$site-header-drop-down-box-shadow:       0 0 8pt -2pt $primary-darker-color;
+// Minor
+$site-header-padding:                    12px 14px;
+$site-header-link-margin:                6px 20px;
+$site-header-user-pic-border-radius:     50%;
+$site-header-user-pic-width:             60px;
+$site-header-drop-down-padding:          10px;
+$site-header-drop-down-item-padding:     6px 8px;
+
+// Site Content (stuff between header and footer)
+// Major
+$route-title-font-size:       2rem;
+$route-title-font-weight:     300;
+$route-title-margin:          20px 0;
+$route-sub-title-font-size:   1.4rem;
+$route-sub-title-font-weight: 300;
+$route-sub-title-margin:      0 0 20px 0;
+$site-content-bg-color:       $primary-base-color;
+// Minor
+$site-content-padding:        0 0 20px 0;
+
+// Site Footer
+
+// Other Content Elements
+// Major
+$h123456-font-weight:    300;
+$h123456-margin:         20px 0 6px 0;
+$link-font-color:       $primary-darkest-color;
+$link-btn-input-outline: none;            // Removes browser's blue outline when in focus.
+$link-text-decoration:   underline;
+// Minor
+$p-margin:               12px 0;
+
+// Border radii
+$border-radius-div:    4px;
+$border-radius-input:  3px;
+$border-radius-button: 6px;
+$border-radius-modal:  10px;
+
+// Buttons
+$button-padding:             6px 10px;
+$button-bg-color:            $primary-darker-color;
+$button-border:              1px solid $primary-lighter-color;
+$button-bg-color-light:      $primary-lighter-color;
+$button-border-light:        1px solid $primary-lightest-color;
+$button-hover-bg-color:      $primary-lighter-color;
+$button-active-bg-color:     $success-lighter-color;
+$button-active-border-color: $success-lightest-color;
+
+// Inputs
+$input-label-font-size:     0.8rem;
+$input-label-font-color:    $primary-darkest-color;
+$input-font-size:           1rem;
+$input-bg-color:            $primary-lightest-color;
+$input-border:              2px solid $primary-lightest-color;
+$input-disabled-font-color: $primary-lighter-color;
+$input-disabled-bg-color:   $primary-darker-color;
+$input-disabled-border:     2px solid $primary-darker-color;
+$input-border-radius:       $border-radius-input;
+$input-small-width:         50px;
+$input-med-width:           125px;
+
+// Animations
+// Major
+$animation-speed:           500ms;
+$animation-speed-fast:      200ms;
+$animation-fade-speed:      1s;
+$animation-fade-speed-fast: 500ms;
+// Minor
+$animation-speed-slow:      1s;
+$animation-fade-speed-slow: 5s;
+
+// Data Badges
+$db-bg-color:           $site-content-bg-color;
+$db-border:             1px solid $info-darkest-color;
+$db-border-radius:      $border-radius-div;
+$db-padding:            10px;
+$db-min-width:          80px;
+$db-data-bg-color:      $info-lightest-color;
+$db-data-padding:       10px;
+$db-data-min-width:     30px;
+$db-data-min-height:    30px;
+$db-data-border-radius: $border-radius-div;
+
+// Modal
+// Major
+$m-width-sm:          500px;
+$m-width-med:         800px;
+$m-width-lg:          92%;
+$m-margin-top:        60px;
+$m-border:            1px solid $primary-black-color;
+$m-title-bg-color:    $primary-lighter-color;
+$m-body-bg-color:     $primary-base-color;
+// Minor
+$m-title-font-size:   1.5rem;
+$m-title-line-height: 3rem;
+$m-border-radius:     $border-radius-modal;
+$m-padding-lr:        16px;
+$m-mask-bg-color:     rgba(0, 0, 0, 0.5);
+
+
+/////////////////////////////////////////////////////////////////////////////
+// EMBER DEPENDENCIES VARIABLES
+// Flash Messages
+$fm-font-color:    rgba($primary-lightest-color, 0.95);
+$fm-border-radius: $border-radius-modal;
+$fm-exiting-speed: 1500ms;
+
+// Collapsible Panel
+$cp-border:        1px solid $primary-lighter-color;
+$cp-padding:       0 10px;
+$cp-bg-color:      $primary-darker-color;
+$cp-margin-bottom: 2px;
+
+// Date Picker
+$dp-input-button-bg-color:         $primary-lightest-color;
+$dp-input-button-border-radius:    $border-radius-input;
+$dp-modal-bg-color:                $primary-lightest-color;
+$dp-modal-border-radius:           $border-radius-div;
+$dp-modal-box-shadow:              0 0 3pt 2pt $primary-darker-color;
+$dp-modal-header-button-border:    1px solid $primary-white-color;
+$dp-modal-button-bg-color:         $primary-base-color;
+$dp-modal-button-hover-bg-color:   $primary-darker-color;
+$dp-modal-button-animation:        true;
+$dp-modal-button-focus-font-color: $primary-lightest-color;
+$dp-modal-today-font-color:        $success-lightest-color;
+$dp-modal-in-range-font-color:     $primary-white-color;
+
+// Power Select
+$ps-bg-color:    $primary-lightest-color;
+$ps-min-width:   125px;
+$ps-min-height:  1.55rem;
+$ps-line-height: 1.55rem;
+
+/////////////////////////////////////////////////////////////////////////////
+// PROJECT SPECIFIC VARIABLES
+// See template .hbs files and _project.scss: class='content-div'

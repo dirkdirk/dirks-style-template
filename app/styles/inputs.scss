@@ -1,0 +1,28 @@
+input {
+    font-size:        $input-font-size;
+    background-color: $input-bg-color;
+    border:           $input-border;
+    border-radius:    $input-border-radius;
+    &:disabled {
+        &::placeholder {
+            color: $input-disabled-font-color;
+        }
+        background-color: $input-disabled-bg-color;
+        border:           $input-disabled-border;
+    }
+}
+
+.input {
+    @at-root #{&}--small-width {
+        width: $input-small-width;
+    }
+    @at-root #{&}--med-width {
+        width: $input-med-width;
+    }
+
+    // @at-root #{&}__labeled-div {}
+    @at-root #{&}__labeled--label {
+        font-size: $input-label-font-size;
+        color:     $input-label-font-color;
+    }
+}

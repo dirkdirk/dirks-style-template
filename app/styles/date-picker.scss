@@ -1,0 +1,52 @@
+.date-picker {
+    background-color: $dp-modal-bg-color;
+    border-radius:    $dp-modal-border-radius;
+    box-shadow:       $dp-modal-box-shadow;
+    button {
+        background-color: $dp-modal-button-bg-color;
+        &.date-picker__day {
+            &:hover {
+                background-color: $dp-modal-button-hover-bg-color;
+                box-shadow:       none;
+                @if $dp-modal-button-animation {
+                    animation-name:      growSome;
+                    animation-duration:  300ms;
+                    animation-direction: alternate;
+                }
+            }
+        }
+        &:focus {
+            color:      $dp-modal-button-focus-font-color;
+            box-shadow: none;
+        }
+    }
+    @at-root #{&}__wrapper {
+        // Make these buttons look like inputs.
+        button {
+            background-color: $input-bg-color;
+            border:           $input-border;
+            border-radius:    $input-border-radius;
+            padding:          1px;
+        }
+    }
+    @at-root #{&}__header__select {
+        cursor: pointer;
+    }
+    @at-root #{&}__header__button {
+        border-radius: $border-radius-button;
+        padding:       3px 12px 6px 12px;
+        border:        $dp-modal-header-button-border;
+    }
+    @at-root #{&}__day--today {
+        color: $dp-modal-today-font-color;
+    }
+    @at-root #{&}__day--in-range {
+        color: $dp-modal-in-range-font-color;
+    }
+}
+
+@keyframes growSome {
+    0%   { font-size: 1em;   }
+    50%  { font-size: 1.5em; }
+    100% { font-size: 1em;   }
+}

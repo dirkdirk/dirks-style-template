@@ -1,7 +1,6 @@
 # dirks-style-template
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+See [Dirk's Style Template](https://dirksstyletemplate.firebaseapp.com/) for demos, code and instructions.
 
 ## Prerequisites
 
@@ -27,17 +26,6 @@ You will need the following things properly installed on your computer.
 ### Code Generators
 
 Make use of the many generators for code, try `ember help generate` for more details
-
-### Running Tests
-
-* `ember test`
-* `ember test --server`
-
-### Linting
-
-* `npm run lint:hbs`
-* `npm run lint:js`
-* `npm run lint:js -- --fix`
 
 ### Building
 

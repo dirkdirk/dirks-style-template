@@ -1,0 +1,26 @@
+#flash-messages-div {
+    position: fixed;
+    top:      15px;
+    right:    20px;
+    color:    $fm-font-color;
+    .flash-message {
+        margin-bottom: 3px;
+        padding:       10px;
+        border-radius: $fm-border-radius;
+    }
+    .alert-info {
+        background-color: $info-color;
+    }
+    .alert-success {
+        background-color: $success-color;
+    }
+    .alert-warn {
+        background-color: $warn-color;
+    }
+    .alert-danger {
+        background-color: $danger-color;
+    }
+    .exiting {
+        animation: fadeOut ease $fm-exiting-speed;
+    }
+}

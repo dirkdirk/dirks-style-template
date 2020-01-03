@@ -1,0 +1,18 @@
+.data-badge {
+
+    background-color: $db-bg-color;
+    border:           $db-border;
+    border-radius:    $db-border-radius;
+    padding:          $db-padding;
+    min-width:        $db-min-width !important;
+
+    @at-root #{&}__data {
+        text-align:       center;
+        background-color: $db-data-bg-color;
+        border-radius:    $db-data-border-radius;
+        padding:          $db-data-padding;
+        min-width:        $db-data-min-width;
+        min-height:       $db-data-min-height;
+    }
+
+}

@@ -1,0 +1,17 @@
+.ember-power-select-trigger {
+    &:focus {
+        outline:    none;
+        box-shadow: $box-shadow-btn-focus !important;
+    }
+    min-width:          $ps-min-width;
+    background-color:   $ps-bg-color !important;
+    min-height:         $ps-min-height !important;
+    line-height:        $ps-line-height !important;
+    &[aria-disabled] {
+        background-color: $input-disabled-bg-color !important;
+        border:           none;
+        .ember-power-select-placeholder {
+            color:        $input-disabled-font-color !important;
+        }
+    }
+}

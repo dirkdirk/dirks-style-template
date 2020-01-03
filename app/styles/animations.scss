@@ -1,0 +1,68 @@
+.show {
+    visibility: visible;
+    opacity:    1;
+    transition: opacity $animation-speed linear;
+}
+.show--fast {
+    visibility: visible;
+    opacity:    1;
+    transition: opacity $animation-speed-fast linear;
+}
+.show--slow {
+    visibility: visible;
+    opacity:    1;
+    transition: opacity $animation-speed-slow linear;
+}
+
+.hide {
+    visibility: hidden;
+    opacity:    0;
+    transition: visibility 0s $animation-speed, opacity $animation-speed linear;
+}
+.hide--fast {
+    visibility: hidden;
+    opacity:    0;
+    transition: visibility 0s $animation-speed-fast, opacity $animation-speed-fast linear;
+}
+.hide--slow {
+    visibility: hidden;
+    opacity:    0;
+    transition: visibility 0s $animation-speed-slow, opacity $animation-speed-slow linear;
+}
+
+.rotate-180 {
+    transform:  rotateX(-180deg);
+    transition: transform $animation-speed linear;
+}
+.rotate-0 {
+    transform:  rotateX(0deg);
+    transition: transform $animation-speed linear;
+}
+
+.fade-in {
+    animation: fadeIn ease $animation-fade-speed;
+}
+.fade-in--fast {
+    animation: fadeIn ease $animation-fade-speed-fast;
+}
+.fade-in--slow {
+    animation: fadeIn ease $animation-fade-speed-slow;
+}
+@keyframes fadeIn {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.fade-out {
+    animation: fadeIn ease $animation-fade-speed;
+}
+.fade-out--fast {
+    animation: fadeIn ease $animation-fade-speed-fast;
+}
+.fade-out--slow {
+    animation: fadeIn ease $animation-fade-speed-slow;
+}
+@keyframes fadeOut {
+    0%   { opacity: 1; }
+    100% { opacity: 0; }
+}

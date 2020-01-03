@@ -1,0 +1,45 @@
+button {
+    background-color: $button-bg-color;
+    padding:          $button-padding;
+    border:           $button-border;
+    border-radius:    $border-radius-button;
+    &:hover {
+        background-color: $button-hover-bg-color;
+    }
+    &:focus {
+        box-shadow: $box-shadow-btn-focus;
+    }
+}
+
+.button {
+    @at-root #{&}--button-selected {
+        background-color: $button-active-bg-color;
+        border-color:     $button-active-border-color;
+    }
+    @at-root #{&}--info {
+        background-color: $info-color;
+        color:            rgba(255,255,255, 0.86);
+    }
+    @at-root #{&}--success {
+        background-color: $success-color;
+        color:            rgba(255,255,255, 0.86);
+    }
+    @at-root #{&}--warn {
+        background-color: $warn-color;
+        color:            rgba(255, 255, 255, 0.86);
+    }
+    @at-root #{&}--danger {
+        background-color: $danger-color;
+        color:            rgba(255,255,255, 0.86);
+    }
+    @at-root #{&}--light {
+        background: $button-bg-color-light;
+        border:     $button-border-light;
+    }
+    @at-root #{&}__copy {
+        border:        none;
+        font-size:     0.87rem;
+        padding:       4px 6px;
+        margin-bottom: 3px;
+    }
+}

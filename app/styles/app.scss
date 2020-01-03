@@ -1,0 +1,154 @@
+/////////////////////////////////////////////////////////////////////////////
+// IMPORTS
+@import 'normalize';
+@import 'reset';
+@import 'variables';
+
+@import 'animations';
+@import 'helpers';
+@import 'buttons';
+@import 'date-picker';
+@import 'inputs';
+@import 'modal';
+@import 'data-badges';
+
+@import 'flash-messages';
+@import 'collapsible-panel';
+@import 'ember-power-select';
+@import 'power-select-overrides';
+
+@import 'project';
+
+/////////////////////////////////////////////////////////////////////////////
+// APPLY GLOBAL SETTINGS
+// Global site wide HTML elements
+body {
+    background-color: $site-content-bg-color;
+    font-family:      $font-family-site;
+    color:            $text-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: $h123456-font-weight;
+    margin:      $h123456-margin;
+}
+
+p {
+    margin: $p-margin;
+}
+
+a, button, input {
+    outline: $link-btn-input-outline;
+}
+
+a {
+    text-decoration: $link-text-decoration;
+    color:           $link-font-color;
+    &:visited {
+        color: $link-font-color;
+    }
+    &.active {
+        button {
+            background-color: $button-active-bg-color;
+            border-color:     $button-active-border-color;
+        }
+    }
+}
+
+div {
+    border-radius: $border-radius-div;
+}
+.div {
+    @at-root #{&}--bg-lighter {
+        background-color: $primary-lighter-color;
+    }
+}
+
+#site-header {
+    background-color: $site-header-bg-color;
+    border-radius:    0;
+    padding:          $site-header-padding;
+    color:            $site-header-font-color;
+    @at-root #{&}__logo {}
+    @at-root #{&}__site-name {
+        text-decoration: none;
+        color:           $site-header-font-color;
+    }
+    .site-header__link {
+        color:           $site-header-link-color;
+        font-size:       $site-header-link-font-size;
+        font-weight:     $site-header-link-font-weight;
+        margin:          $site-header-link-margin;
+        text-decoration: none;
+        &.active {
+            color:         $site-header-link-active-color;
+            border-bottom: 2px solid $success-lighter-color;
+        }
+        &:visited {
+            color: $site-header-link-visited-color;
+        }
+    }
+    @at-root #{&}__user-pic {
+        border-radius: $site-header-user-pic-border-radius;
+        width:         $site-header-user-pic-width;
+        cursor:        pointer;
+    }
+    @at-root #{&}__menu-icon {
+        margin-top: -10px;
+        cursor:     pointer;
+    }
+    @at-root #{&}__drop-down-menu__wrapper {
+        z-index:          100;
+        position:         fixed;
+        top:              0;
+        left:             0;
+        width:            100%;
+        height:           100%;
+        overflow:         auto;
+        background-color: $m-mask-bg-color;
+        border:           none;
+        border-radius:    0;
+    }
+    @at-root #{&}__drop-down-menu {
+        position:         absolute;
+        top:              100px;
+        right:            10px;
+        color:            $site-header-drop-down-font-color;
+        background-color: $site-header-bg-color;
+        border:           $site-header-drop-down-border;
+        padding:          $site-header-drop-down-padding;
+        box-shadow:       $site-header-drop-down-box-shadow;
+    }
+    .site-header__drop-down-menu__item {
+        padding: $site-header-drop-down-item-padding;
+        cursor:  pointer;
+        &:hover {
+            color: $site-header-drop-down-item-hover-color;
+        }
+    }
+}
+
+// Stuff between the header and footer
+#site-content {
+    padding: $site-content-padding;
+}
+
+// Route title and subtitle
+#route-title {
+    font-size:   $route-title-font-size;
+    font-weight: $route-title-font-weight;
+    margin:      $route-title-margin;
+}
+
+.route-sub-title {
+    font-size:   $route-sub-title-font-size;
+    font-weight: $route-sub-title-font-weight;
+    margin:      $route-sub-title-margin;
+}
+
+// is-working div for promises, lazy loading, and data crunching
+.is-working-div {
+    color: $success-base-color;
+}
+
+@import "ember-power-select";

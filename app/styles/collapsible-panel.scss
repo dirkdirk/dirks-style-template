@@ -1,0 +1,21 @@
+.cp-Panels {
+    // padding: 10px;
+}
+.cp-Panel {
+    border:                     $cp-border;
+    background-color:           $cp-bg-color;
+    margin-bottom:              $cp-margin-bottom;
+    border-bottom-left-radius:  0;
+    border-bottom-right-radius: 0;
+    cursor:                     pointer;
+    // Padding is here and in .cp-Panel-body because if it's placed on .cp-Panel, cursor: pointer (of .cp-Panel) shows in the padding surrounding .cp-Panel-body.
+    a {
+        p {
+            padding: $cp-padding;
+        }
+    }
+    .cp-Panel-body {
+        padding: $cp-padding;
+        cursor:  default;
+    }
+}

@@ -1,0 +1,116 @@
+$cd-border:            1px solid $primary-darkest-color;
+$cd-border-radius:     0;
+
+$cd-margin:            10px;
+$cd-default-width:     380px;
+$cd-full-width:        (2 * $cd-default-width) + (2 * $cd-margin);
+$cd-med-breakpoint:    (2 * $cd-default-width) + (4 * $cd-margin);
+$cd-small-breakpoint:  $cd-default-width + (2 * $cd-margin);
+$cd-max-width:         92%;
+
+$cd-title-font-size:   1.6rem;
+$cd-title-font-weight: 300;
+$cd-title-bg-color:    $primary-darker-color;
+$cd-title-padding:     12px;
+$cd-content-padding:   0 12px 12px 12px;
+
+li { margin-bottom: 4px; }
+
+.content-div-wrapper { display: flex; }
+
+.content-div {
+    border:        $cd-border;
+    border-radius: $cd-border-radius;
+    margin-top:    $cd-margin;
+    margin-bottom: $cd-margin;
+    width:         $cd-default-width;
+    @at-root #{&}__title {
+        padding:          $cd-title-padding;
+        font-size:        $cd-title-font-size;
+        font-weight:      $cd-title-font-weight;
+        border-radius:    $cd-border-radius;
+        background-color: $cd-title-bg-color;
+    }
+    @at-root #{&}__content {
+        padding:       $cd-content-padding;
+        border-radius: $cd-border-radius;
+    }
+    @at-root #{&}--full-width {
+        width: $cd-full-width;
+    }
+    @at-root #{&}--left {
+        display:        flex;         // Forcing flex mitigates the margin merge issue between vertical sibling divs.
+        flex-direction: column;
+        margin-right:   $cd-margin;
+    }
+    @at-root #{&}--right {
+        display:        flex;         // Forcing flex mitigates the margin merge issue between vertical sibling divs.
+        flex-direction: column;
+        margin-left:    $cd-margin;
+    }
+}
+
+@media (max-width: $cd-med-breakpoint) {
+    .content-div-wrapper     { display:      block;             }
+    .content-div--left       { margin-right: 0;                 }
+    .content-div--right      { margin-left:  0;                 }
+    .content-div--full-width { width:        $cd-default-width; }
+}
+
+@media (max-width: $cd-small-breakpoint) {
+    .content-div-wrapper { width: $cd-max-width; }
+    .content-div         { width: 100%;          }
+}
+
+.colors__big-color {
+    height:        100px;
+    width:         100px;
+    border:        2px solid black;
+    border-radius: 10px;
+    margin:        10px 10px 0 10px;
+}
+.colors__small-color {
+    height:        16px;
+    width:         40px;
+    border-radius: 0;
+}
+
+.colors__primary-base     { background-color: $primary-base-color; }
+.colors__primary-lightest { background-color: $primary-lightest-color; }
+.colors__primary-lighter  { background-color: $primary-lighter-color; }
+.colors__primary-darker   { background-color: $primary-darker-color; }
+.colors__primary-darkest  { background-color: $primary-darkest-color; }
+.colors__primary-black    { background-color: $primary-black-color; }
+
+.colors__info-base     { background-color: $info-base-color; }
+.colors__info-lightest { background-color: $info-lightest-color; }
+.colors__info-lighter  { background-color: $info-lighter-color; }
+.colors__info-darker   { background-color: $info-darker-color; }
+.colors__info-darkest  { background-color: $info-darkest-color; }
+
+.colors__success-base     { background-color: $success-base-color; }
+.colors__success-lightest { background-color: $success-lightest-color; }
+.colors__success-lighter  { background-color: $success-lighter-color; }
+.colors__success-darker   { background-color: $success-darker-color; }
+.colors__success-darkest  { background-color: $success-darkest-color; }
+
+.colors__warn-base        { background-color: $warn-base-color; }
+.colors__warn-lightest    { background-color: $warn-lightest-color; }
+.colors__warn-lighter     { background-color: $warn-lighter-color; }
+.colors__warn-darker      { background-color: $warn-darker-color; }
+.colors__warn-darkest     { background-color: $warn-darkest-color; }
+
+.colors__danger-base      { background-color: $danger-base-color; }
+.colors__danger-lightest  { background-color: $danger-lightest-color; }
+.colors__danger-lighter   { background-color: $danger-lighter-color; }
+.colors__danger-darker    { background-color: $danger-darker-color; }
+.colors__danger-darkest   { background-color: $danger-darkest-color; }
+
+.show-hide-demo-div {
+    position:         absolute;
+    @at-root #{&}--opaq-bg {
+        color:            $primary-lighter-color;
+        background-color: $primary-darkest-color;
+        box-shadow:       0 0 4pt 2pt $primary-darker-color;
+    }
+}
