@@ -1,1 +1,58 @@
-lkj
+<div id='site-header' class='flex-row jc-between fade-in--fast'>
+
+    <div class='flex-col ai-center jc-start'>
+        <LinkTo @route='index'>
+            <div id='site-header__logo'>
+                <img src={{this.globals.logo}} alt='Logo'>
+            </div>
+            <div id='site-header__site-name' class='flex-col ai-center'>
+                <div><nobr>Dirk's Style</nobr></div>
+                <div><nobr>Framework</nobr></div>
+            </div>
+        </LinkTo>
+    </div>
+
+    <div class='flex-row jc-center ai-center wrap'>
+        {{#each routes as |route|}}
+            <LinkTo @route={{route.routeName}} class='site-header__link'>
+                <nobr>{{route.displayName}}</nobr>
+            </LinkTo>
+        {{/each}}
+    </div>
+
+    <div class='flex-col ai-center jc-start'>
+        <div class='flex-col jc-center ai-center' {{on 'click' (toggle 'showDropDownMenu' this)}}>
+            <img id='site-header__user-pic' src={{this.globals.userPicUrl}} alt='User picture'>
+            <div id='site-header__menu-icon'>
+                {{fa-icon 'angle-down' size=3 class=(if showDropDownMenu 'rotate-180' 'rotate-0')}}
+            </div>
+        </div>
+        <div id='site-header__drop-down-menu__wrapper' class={{if showDropDownMenu 'show' 'hide'}} {{on 'click' (toggle 'showDropDownMenu' this)}}>
+            <div id='site-header__drop-down-menu'>
+                <div class='site-header__drop-down-menu__item' {{action (action 'openLink' this.globals.githubDirksStyleTemplateUrl)}}>
+                    Github
+                </div>
+                <div class='site-header__drop-down-menu__item' {{action 'logOutAction'}}>
+                    Log Out
+                </div>
+                <div class='site-header__drop-down-menu__item'>
+                    Option Two
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div id='flash-messages-div'>
+    {{#each flashMessages.queue as |flash|}}
+        {{flash-message flash=flash class='fade-in'}}
+    {{/each}}
+</div>
+
+<div id='site-content'>
+    {{outlet}}
+</div>
+
+{{!-- <div class='site-footer'>
+</div> --}}

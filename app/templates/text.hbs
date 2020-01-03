@@ -1,0 +1,260 @@
+<div class='flex-col ai-center fade-in--fast'>
+
+    <div id='route-title'>Text Styles</div>
+
+    <div class='content-div-wrapper'>
+        <div class='content-div--left'>
+            <div class='flex-col'>
+                <div class='content-div'>
+                    <div class='content-div__title'>
+                        Heading Elements
+                    </div>
+                    <div class='content-div__content'>
+                        {{show-code code='<h1>'}}<h1>h1 Title</h1>
+                        {{show-code code='<h2>'}}<h2>h2 Title</h2>
+                        {{show-code code='<h3>'}}<h3>h3 Title</h3>
+                        {{show-code code='<h4>'}}<h4>h4 Title</h4>
+                        {{show-code code='<h5>'}}<h5>h5 Title</h5>
+                        {{show-code code='<h6>'}}<h6>h6 Title</h6>
+                    </div>
+                </div>
+
+                <div class='content-div'>
+                    <div class='content-div__title'>
+                         Text Elements
+                    </div>
+                    <div class='content-div__content'>
+                        <h2>Route Title</h2>
+                        {{show-code code="<div id='route-title'>
+  The Big Title
+</div>"}}
+                        <h3>Result</h3>
+                        <div id='route-title'>The Big Title</div>
+                        <h2 class='mt40'>Route Subtitle</h2>
+                        {{show-code code="<div class='route-sub-title'>
+  The Smaller Subtitle
+</div>"}}
+                        <h3>Result</h3>
+                        <div class='route-sub-title'>The Smaller Subtitle</div>
+                        <h2 class='mt40'>Paragraphs</h2>
+                        {{show-code code='<p>Text in a p element</p>
+<p>More text in a p element</p>'}}
+                        <h3>Result</h3>
+                        <p>Text in a p element</p><p>More text in a p element</p>
+                        <h2 class='mt40'>Naked Text</h2>
+                        Unwrapped text.<br>More unwrapped text.
+                        <h2 class='mt40'>Links</h2>
+                        {{show-code code="<a href='#'>Link to nowhere.</a>"}}
+                        <h3>Result</h3>
+                        <p><a href='#'>Link to nowhere.</a></p>
+                    </div>
+                </div>
+
+                <div class='content-div'>
+                    <div class='content-div__title'>
+                         Text Modfiers
+                    </div>
+                    <div class='content-div__content'>
+                        <h2>Line Though</h2>
+                        {{show-code code="<p class= 'text-line-through'>This is line through text.</p>"}}
+                        <h3>Result</h3>
+                        <p class='text-line-through'>This is line through text.</p>
+                        <h2 class='mt40'>Monospace</h2>
+                        {{show-code code="<p class='text-monospace'>This is monospace text.<br>Lines up nicely vertically.</p>"}}
+                        <h3>Result</h3>
+                        <p class='text-monospace'>This is monospace text.<br>Lines up nicely vertically.</p>
+                        <h2 class='mt40'>Colors</h2>
+                        {{show-code code="<p class='text-info | text-success | text-warn | text-danger'>...</p>"}}
+                        <h3>Result</h3>
+                        <div class='div--bg-lighter p10'>
+                            <span class='text-info'>Info, </span><span class='text-success'>success, </span><span class='text-warn'>warn </span><span class='text-danger'>and danger</span> colored text.
+                        </div>
+                        <h2 class='mt40'>Cursor Pointer</h2>
+                        {{show-code code="<p class='cursor-pointer'>Cursor pointer on hover.</p>"}}
+                        <h3>Result</h3>
+                        <p class='cursor-pointer'>Cursor pointer on hover.</p>
+                        <h2 class='mt40'>Cursor Arrow</h2>
+                        {{show-code code="<p class='cursor-arrow'>Cursor arrow on hover.</p>"}}
+                        <h3>Result</h3>
+                        <p class='cursor-arrow'>Cursor arrow on hover.</p>
+                    </div>
+                </div>
+
+                <div class='content-div'>
+                    <div class='content-div__title'>
+                         Line Clamp
+                    </div>
+                    <div class='content-div__content'>
+                        <h2>Introduction</h2>
+                        <p>If the text is too long, throw the {{globals.emberLineClampLink}} addon on it to shorten it to n lines with a "link" to see more or less.</p>
+                        {{show-code code="{{line-clamp
+  text='Lorem ipsum...'
+  lines=1
+  seeMoreText='..+'
+  seeLessText='
+  ellipsis=''}}"}}
+                        <h3>Result</h3>
+                        {{line-clamp
+                            text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent scelerisque, justo a ultricies elementum, arcu erat lobortis est, a ullamcorper orci elit vel tortor. Suspendisse in magna diam. Donec pellentesque augue porta, fermentum diam ut, condimentum lorem. Nulla facilisi. Integer massa velit, facilisis a sollicitudin eget, ultrices laoreet enim. Vivamus mollis imperdiet sapien, vel imperdiet tellus suscipit congue.'
+                            lines=1
+                            seeMoreText='..+'
+                            seeLessText='..less'
+                            ellipsis=''}}
+                    </div>
+                </div>
+
+                <div class='content-div'>
+                    <div class='content-div__title'>
+                         Working Fa Icon
+                    </div>
+                    <div class='content-div__content'>
+                        <h2>Introduction</h2>
+                        <p>A simple spinner to indicate the app is working.</p>
+                        {{show-code code="{{if isWorking}}
+  <div class='is-working-div'>
+    {{fa-icon 'refresh' size=3 spin=true}}
+  </div>
+{{/if}}"}}
+                        <h3>Result</h3>
+                        <div class='flex-row jc-center mt10 mb20'>
+                            <button class='mtb20' {{action (toggle 'isWorking' this)}}>{{if isWorking 'Stop working' 'Start working'}}</button>
+                        </div>
+                        <div class={{concat 'flex-row jc-center mtb20 is-working-div' (if isWorking ' show' ' hide')}}>
+                            {{fa-icon 'refresh' size=3 spin=true}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class='content-div--right'>
+            <div class='content-div'>
+                <div class='content-div__title'>
+                     Font Awesome
+                </div>
+                <div class='content-div__content'>
+                    <h2>Plain Jane</h2>
+                        {{show-code code="{{fa-icon 'cog'}}
+{{fa-icon 'angle-down'}}
+{{fa-icon 'cog'}}"}}
+                    <h3>Result</h3>
+                    {{fa-icon 'cog'}}
+                    {{fa-icon 'angle-down'}}
+                    {{fa-icon 'cog'}}
+
+                    <h2 class='mt40'>Size</h2>
+                        {{show-code code="{{fa-icon 'cog' size=3}}"}}
+                    <h3>Result</h3>
+                    {{fa-icon 'cog' size=3}}
+
+                    <h2 class='mt40'>Fixed Width</h2>
+                        {{show-code code="{{fa-icon 'cog' fixedWidth=true}}
+{{fa-icon 'angle-down' fixedWidth=true}}
+{{fa-icon 'cog' fixedWidth=true}}"}}
+                    <h3>Result</h3>
+                    {{fa-icon 'cog' fixedWidth=true}}
+                    {{fa-icon 'angle-down' fixedWidth=true}}
+                    {{fa-icon 'cog' fixedWidth=true}}
+
+                    <h2 class='mt40'>Spin</h2>
+                        {{show-code code="{{fa-icon 'spinner' spin=true}}
+{{fa-icon 'circle-o-notch' spin=true}}
+{{fa-icon 'refresh' spin=true}}
+{{fa-icon 'cog' spin=true}}"}}
+                    <h3>Result</h3>
+                    {{fa-icon 'spinner' spin=true}}
+                    {{fa-icon 'circle-o-notch' spin=true}}
+                    {{fa-icon 'refresh' spin=true}}
+                    {{fa-icon 'cog' spin=true}}
+
+                    <h2 class='mt40'>Pulse</h2>
+                        {{show-code code="{{fa-icon 'spinner' pulse=true}}"}}
+                    <h3>Result</h3>
+                    {{fa-icon 'spinner' pulse=true}}
+
+                    <h2 class='mt40'>Rotate</h2>
+                        {{show-code code="{{fa-icon 'shield'}} - normal<br>
+{{fa-icon 'shield' rotate=90}} - rotate=90<br>
+{{fa-icon 'shield' rotate=180}} - rotate=180<br>
+{{fa-icon 'shield' rotate=270}} - rotate=270"}}
+                    <h3>Result</h3>
+                    {{fa-icon 'shield'}} - normal<br>
+                    {{fa-icon 'shield' rotate=90}} - rotate=90<br>
+                    {{fa-icon 'shield' rotate=180}} - rotate=180<br>
+                    {{fa-icon 'shield' rotate=270}} - rotate=270
+
+                    <h2 class='mt40'>Flip</h2>
+                        {{show-code code="{{fa-icon 'shield' flip='horizontal'}} - flip='horizontal'<br>
+{{fa-icon 'shield' flip='vertical'}} - flip='vertical'"}}
+                    <h3>Result</h3>
+                    {{fa-icon 'shield' flip='horizontal'}} - flip='horizontal'<br>
+                    {{fa-icon 'shield' flip='vertical'}} - flip='vertical'
+
+                    <h2 class='mt40'>Stack</h2>
+                        {{show-code code="{{#fa-stack size='lg' as |s|
+  {{s.stack-2x 'square-o'
+  {{s.stack-1x 'twitter'
+{{/fa-stack}}"}}
+                    <h3>Result</h3>
+                    {{#fa-stack size='lg' as |s|}}
+                        {{s.stack-2x 'square-o'}}
+                        {{s.stack-1x 'twitter'}}
+                    {{/fa-stack}}
+
+                        {{show-code code="{{#fa-stack size='lg' as |s|
+  {{s.stack-2x 'circle'
+  {{s.stack-1x 'flag' inverse=true
+{{/fa-stack}}"}}
+                    <h3>Result</h3>
+                    {{#fa-stack size='lg' as |s|}}
+                      {{s.stack-2x 'circle'}}
+                      {{s.stack-1x 'flag' inverse=true}}
+                    {{/fa-stack}}
+
+                        {{show-code code="{{#fa-stack size='lg' as |s|
+  {{s.stack-2x 'square'
+  {{s.stack-1x 'terminal' class='text-info'
+{{/fa-stack}}"}}
+                    <h3>Result</h3>
+                    {{#fa-stack size='lg' as |s|}}
+                      {{s.stack-2x 'square'}}
+                      {{s.stack-1x 'terminal' class='text-info'}}
+                    {{/fa-stack}}
+
+                        {{show-code code="{{#fa-stack size='lg' as |s|
+  {{s.stack-2x 'square'
+  {{s.stack-1x 'terminal' class='text-success'
+{{/fa-stack}}"}}
+                    <h3>Result</h3>
+                    {{#fa-stack size='lg' as |s|}}
+                      {{s.stack-2x 'square'}}
+                      {{s.stack-1x 'terminal' class='text-success'}}
+                    {{/fa-stack}}
+
+                        {{show-code code="{{#fa-stack size='lg' as |s|
+  {{s.stack-2x 'square'
+  {{s.stack-1x 'terminal' class='text-warn'
+{{/fa-stack}}"}}
+                    <h3>Result</h3>
+                    {{#fa-stack size='lg' as |s|}}
+                      {{s.stack-2x 'square'}}
+                      {{s.stack-1x 'terminal' class='text-warn'}}
+                    {{/fa-stack}}
+
+                        {{show-code code="{{#fa-stack size='lg' as |s|
+  {{s.stack-2x 'square'
+  {{s.stack-1x 'terminal' class='text-danger'
+{{/fa-stack}}"}}
+                    <h3>Result</h3>
+                    {{#fa-stack size='lg' as |s|}}
+                      {{s.stack-2x 'square'}}
+                      {{s.stack-1x 'terminal' class='text-danger'}}
+                    {{/fa-stack}}
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

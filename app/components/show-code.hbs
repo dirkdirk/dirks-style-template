@@ -1,0 +1,26 @@
+<div class='flex-row jc-start'>
+
+    <div class='flex-col'>
+
+        <div class='flex-row jc-between ai-end min-width-200'>
+            <div>
+                <h3>Code</h3>
+            </div>
+            <div>
+                <CopyButton
+                    @class='button__copy button--info'
+                    @clipboardText={{@code}}
+                    @success={{action 'copySuccess'}}>
+                    {{fa-icon 'copy'}}
+                </CopyButton>
+                {{ember-tooltip text='Copy code to clipboard.'}}
+            </div>
+        </div>
+
+        <div class='flex-row jc-start'>
+            <div class='code-block min-width-200'>{{@code}}</div>
+        </div>
+
+    </div>
+
+</div>

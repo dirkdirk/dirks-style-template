@@ -1,0 +1,339 @@
+<div class='flex-col ai-center fade-in--fast'>
+
+    <div id='route-title'>Layout</div>
+
+    <div class='content-div-wrapper'>
+        <div class='content-div--left'>
+            <div class='content-div'>
+                <div class='content-div__title'>
+                    Flexbox Review
+                </div>
+                <div class='content-div__content'>
+                    <h2>Introduction</h2>
+                    <p>Below is an extreme summary of the most excellent: {{globals.flexGuideLink}}</p>
+                    <h2 class='mt40'>Direction</h2>
+                    <div class='text-monospace'>
+                        flex-direction: row | row-reverse | column | column-reverse;
+                    </div>
+                    <h2 class='mt40'>Main Axis (extra space distribution)</h2>
+                    <div class='text-monospace'>
+                        justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly | start | end | left | right ... + safe | unsafe;
+                    </div>
+                    <h2 class='mt40'>Cross Axis (alignment)</h2>
+                    <div class='text-monospace'>
+                        align-items: stretch | flex-start | flex-end | center | baseline | first baseline | last baseline | start | end | self-start | self-end + ... safe | unsafe;
+                    </div>
+                    <h2 class='mt40'>Cross Axis (extra space distribution)</h2>
+                    <div class='text-monospace'>
+                        align-content: flex-start | flex-end | center | space-between | space-around | space-evenly | stretch | start | end | baseline | first baseline | last baseline + ... safe | unsafe;
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='content-div--right'>
+            <div class='content-div'>
+                <div class='content-div__title'>
+                    Flexbox Classes
+                </div>
+                <div class='content-div__content'>
+                    <h2>Introduction</h2>
+                    <p>Classes needed to apply all Flexbox options to any div in your project are available.</p>
+                    <p>Further below are numerous examples with code.</p>
+                    <h2 class='mt40'>Flex Direction</h2>
+                    <div class='text-monospace'>
+                        .flex-row / .flex-col
+                    </div>
+                    <h2 class='mt40'>Justify Content</h2>
+                    <div class='text-monospace'>
+                        .jc-start / .jc-end<br>
+                        .jc-center<br>
+                        .jc-between<br>
+                        .jc-around<br>
+                        .jc-evenly
+                    </div>
+                    <h2 class='mt40'>Align Content</h2>
+                    <div class='text-monospace'>
+                        .ac-start / .ac-end<br>
+                        .ac-center<br>
+                        .ac-between<br>
+                        .ac-around<br>
+                        .ac-evenly
+                    </div>
+                    <h2 class='mt40'>Align Items</h2>
+                    <div class='text-monospace'>
+                        .ai-start / .ai-end<br>
+                        .ai-stretch<br>
+                        .ai-center<br>
+                        .ai-baseline
+                    </div>
+                    <h2 class='mt40'>Wrap</h2>
+                    <div class='text-monospace'>
+                        .wrap
+                    </div>
+                    <h2 class='mt40'>Display Order</h2>
+                    <div class='text-monospace mb10'>
+                        .order1 / .order2 / .order3
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class='content-div--wrapper'>
+        <div class='content-div content-div--full-width'>
+            <div class='content-div__title'>
+                Helper Display Classes
+            </div>
+            <div class='content-div__content'>
+                <h2>Introduction</h2>
+                <p>Add these helpers classes to an appropriate element (mostly divs) for the desired effect.</p>
+                <h2 class='mt40'>Margins</h2>
+                <div class='text-monospace'>
+                    .m0 / .m10 / .m20 - { margin: Xpx; }<br>
+                    .mt10 / .mt20 / .mt40 - { margin-top: Xpx; }<br>
+                    .mr10 / .mr20 - { margin-right: Xpx; }<br>
+                    .mb10 / .mb20 / .mb40 - { margin-bottom: Xpx; }<br>
+                    .ml10 / .ml20 - { margin-left: Xpx; }<br>
+                    .mlr10 / .mlr20 - { margin-left: Xpx; margin-right: Xpx; }<br>
+                    .mtb10 / .mtb20 - { margin-top: Xpx; margin-bottom: Xpx; }
+                </div>
+                <h2 class='mt40'>Padding</h2>
+                <div class='text-monospace'>
+                    .p1rem - { padding: 1rem; }<br>
+                    .plr1rem - { padding-left: 1rem;  padding-right: 1rem; }<br>
+                    .p10 - { padding: 10px; }
+                </div>
+                <h2 class='mt40'>Borders</h2>
+                <div class='text-monospace'>
+                    .b1blue - { border: 1px solid blue;  }<br>
+                    .b1red - { border: 1px solid red;   }<br>
+                    .b1green - { border: 1px solid green; }
+                </div>
+                <h2 class='mt40'>Widths</h2>
+                <div class='text-monospace'>
+                    .width-100pct - { width: 100% !important; }<br>
+                    .width-50pct - { width:  50% !important;  }<br>
+                    .width-100 - { width: 100px; }<br>
+                    .width-150 - { width: 150px; }
+                </div>
+                <h2 class='mt40'>Heights</h2>
+                <div class='text-monospace mb10'>
+                    .height-100 - { height: 100px; }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class='content-div-wrapper'>
+        <div class='content-div--left'>
+            <div class='content-div'>
+                <div class='content-div__title'>
+                    Flexbox Row -<br>center center
+                </div>
+                <div class='content-div__content'>
+                    {{show-code code="<div class='flex-row jc-center ai-center'>"}}
+                    <h3>Result</h3>
+                    <div class='flex-row jc-center ai-center b1green'>
+                        <div class='m20 p1rem b1red'>
+                            Short div
+                        </div>
+                        <div class='m20 p1rem b1blue'>
+                            <p>Tall</p>
+                            <p>div</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='content-div--right'>
+            <div class='content-div'>
+                <div class='content-div__title'>
+                    Flexbox Col -<br>center center
+                </div>
+                <div class='content-div__content'>
+                    {{show-code code="<div class='flex-col jc-center ai-center'>"}}
+                    <h3>Result</h3>
+                    <div class='flex-col jc-center ai-center b1green'>
+                        <div class='m10 p1rem b1red'>
+                            Div 1
+                        </div>
+                        <div class='m10 p1rem b1blue'>
+                            Another div
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class='content-div-wrapper'>
+        <div class='content-div--left'>
+            <div class='content-div'>
+                <div class='content-div__title'>
+                    Flexbox Row -<br>top center
+                </div>
+                <div class='content-div__content'>
+                    {{show-code code="<div class='flex-row jc-center ai-start'>"}}
+                    <h3>Result</h3>
+                    <div class='flex-row jc-center ai-start b1green'>
+                        <div class='m20 p1rem b1red'>
+                            Short div
+                        </div>
+                        <div class='m20 mb40 p1rem b1blue'>
+                            <p>Tall</p>
+                            <p>div</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='content-div--right'>
+            <div class='content-div'>
+                <div class='content-div__title'>
+                    Flexbox Col -<br>top center
+                </div>
+                <div class='content-div__content'>
+                    {{show-code code="<div class='flex-col ai-center'>"}}
+                    <h3>Result</h3>
+                    <div class='flex-col ai-center b1green width-100pct'>
+                        <div class='m10 p1rem b1red'>
+                            Div 1
+                        </div>
+                        <div class='m10 mb40 p1rem b1blue'>
+                            Another div
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class='content-div-wrapper'>
+        <div class='content-div--left'>
+            <div class='content-div'>
+                <div class='content-div__title'>
+                    Flexbox Row -<br>top left
+                </div>
+                <div class='content-div__content'>
+                    {{show-code code="<div class='flex-row ai-start'>"}}
+                    <h3>Result</h3>
+                    <div class='flex-row ai-start b1green'>
+                        <div class='m10 p1rem b1red'>
+                            Short div
+                        </div>
+                        <div class='m10 p1rem b1blue'>
+                            <p>Tall</p>
+                            <p>div</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='content-div--right'>
+            <div class='content-div'>
+                <div class='content-div__title'>
+                    Flexbox Col -<br>top left
+                </div>
+                <div class='content-div__content'>
+                    {{show-code code="<div class='flex-col ai-start'>"}}
+                    <h3>Result</h3>
+                    <div class='flex-col ai-start b1green'>
+                        <div class='m10 p1rem b1red'>
+                            Div 1
+                        </div>
+                        <div class='m10 p1rem b1blue'>
+                            Another div
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class='content-div-wrapper'>
+        <div class='content-div--left'>
+            <div class='content-div'>
+                <div class='content-div__title'>
+                    Flexbox Row -<br>top space-center
+                </div>
+                <div class='content-div__content'>
+                    {{show-code code="<div class='flex-row jc-center ai-start'>"}}
+                    <h3>Result</h3>
+                    <div class='flex-row jc-center ai-start b1green'>
+                        <div class='m10 p1rem b1red'>
+                            Short div
+                        </div>
+                        <div class='m10 p1rem b1blue'>
+                            <p>Tall</p>
+                            <p>div</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='content-div--right'>
+            <div class='content-div'>
+                <div class='content-div__title'>
+                    Flexbox Row -<br>top space-between
+                </div>
+                <div class='content-div__content'>
+                    {{show-code code="<div class='flex-row jc-between ai-start'>"}}
+                    <h3>Result</h3>
+                    <div class='flex-row jc-between ai-start b1green'>
+                        <div class='m10 p1rem b1red'>
+                            Short div
+                        </div>
+                        <div class='m10 p1rem b1blue'>
+                            <p>Tall</p>
+                            <p>div</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class='content-div-wrapper'>
+        <div class='content-div--left'>
+            <div class='content-div'>
+                <div class='content-div__title'>
+                    Flexbox Row -<br>top space-around
+                </div>
+                <div class='content-div__content'>
+                    {{show-code code="<div class='flex-row jc-around ai-start'>"}}
+                    <h3>Result</h3>
+                    <div class='flex-row jc-around ai-start b1green'>
+                        <div class='m10 p1rem b1red'>
+                            Short div
+                        </div>
+                        <div class='m10 p1rem b1blue'>
+                            <p>Tall</p>
+                            <p>div</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='content-div--right'>
+            <div class='content-div'>
+                <div class='content-div__title'>
+                    Flexbox Row -<br>top space-evenly
+                </div>
+                <div class='content-div__content'>
+                    {{show-code code="<div class='flex-row jc-evenly ai-start'>"}}
+                    <h3>Result</h3>
+                    <div class='flex-row jc-evenly ai-start b1green'>
+                        <div class='m10 p1rem b1red'>
+                            Short div
+                        </div>
+                        <div class='m10 p1rem b1blue'>
+                            <p>Tall</p>
+                            <p>div</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

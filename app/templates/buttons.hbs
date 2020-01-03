@@ -1,0 +1,70 @@
+<div class='flex-col ai-center fade-in--fast'>
+
+    <div id='route-title'>Buttons</div>
+
+    <div class='content-div-wrapper'>
+        <div class='content-div content-div--full-width'>
+            <div class='content-div__title'>
+                Button Styles
+            </div>
+            <div class='content-div__content mb10'>
+
+                <h2>Introduction</h2>
+                <p>Buttons' styles are completely reset by {{globals.githubStylesNormalizeLink}} and {{globals.githubStylesResetLink}}.</p>
+                <p>Buttons' styling variables are defined in the {{globals.githubStylesVariablesLink}} file and applied in the {{globals.githubStylesButtonsLink}} file.</p>
+                <p>Customize your buttons by first editing the variables in _variables.scss and then editing buttons.scss for more control.</p>
+
+                <h2 class='mt40'>Default Button</h2>
+                {{show-code code="<button>Button</button>"}}
+                <h3>Result</h3>
+                <button>Button</button>
+
+                <h2 class='mt40'>Light Button</h2>
+                {{show-code code="<button class='button--light'>Light</button>"}}
+                <h3>Result</h3>
+                <button class='button--light'>Light</button>
+
+                <h2 class='mt40'>Success Button</h2>
+                {{show-code code="<button class='button--success'>Success</button>"}}
+                <h3>Result</h3>
+                <button class='button--success'>Success</button>
+
+                <h2 class='mt40'>Warning Button</h2>
+                {{show-code code="<button class='button--warn'>Warning</button>"}}
+                <h3>Result</h3>
+                <button class='button--warn'>Warning</button>
+
+                <h2 class='mt40'>Danger Button</h2>
+                {{show-code code="<button class='button--danger'>Danger</button>"}}
+                <h3>Result</h3>
+                <button class='button--danger'>Danger</button>
+
+                <h2 class='mt40'>Link-to Button</h2>
+                {{show-code code="{{#link-to 'index'}}
+                <button>Guide</button>
+                {{/link-to}}"}}
+                <h3>Result</h3>
+                {{#link-to 'index'}}<button>Guide</button>{{/link-to}}
+
+                <h2 class='mt40'>Link-to active Button</h2>
+                {{show-code code="{{#link-to 'buttons'}}
+                <button>Buttons</button>
+                {{/link-to}}"}}
+                <h3>Result</h3>
+                {{#link-to 'buttons'}}<button>Buttons</button>{{/link-to}}
+
+                <h2 class='mt40'>FA Icons Buttons</h2>
+                {{show-code code="<button class='button--fa-icon button--danger'>
+                    {{fa-icon 'arrow-up'}}
+                </button>
+                <button class='button--fa-icon button--success'>
+                    {{fa-icon 'arrow-down'}}
+                </button>"}}
+                <h3>Result</h3>
+                <button class='button--danger'>{{fa-icon 'arrow-up'}}</button>
+                <button class='button--success'>{{fa-icon 'arrow-down'}}</button>
+            </div>
+        </div>
+    </div>
+
+</div>

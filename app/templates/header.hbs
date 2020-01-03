@@ -1,0 +1,62 @@
+<div class='flex-col ai-center fade-in--fast'>
+
+    <div id='route-title'>Header</div>
+
+    <div class='content-div-wrapper'>
+        <div class='content-div content-div--full-width'>
+            <div class='content-div__title'>
+                Built-in Header
+            </div>
+            <div class='content-div__content mb10'>
+                <h2>Introduction</h2>
+                <p>The header depends on a chunk of handlebars and a the following SASS files:</p>
+                <ul>
+                    <li>SASS normalize: {{globals.githubStylesNormalizeLink}}</li>
+                    <li>SASS reset: {{globals.githubStylesResetLink}}</li>
+                    <li>SASS vars: {{globals.githubStylesVariablesLink}}</li>
+                    <li>SASS defs: {{globals.githubStylesAppLink}}</li>
+                    <li>SASS animations: {{globals.githubStylesAnimationsLink}}</li>
+                    <li>SASS helpers: {{globals.githubStylesHelpersLink}}</li>
+                    <li>The handlebars below or in the #site-header div in: {{globals.githubTemplatesApplicationLink}}</li>
+                </ul>
+
+                <h2 class='mt40'>Handlebars</h2>
+                {{show-code code="<div id='site-header' class='flex-row jc-between fade-in--fast'>
+
+  <div class='flex-col ai-center jc-center'>
+    {{#link-to 'index'}}
+      <div id='site-header__logo'>
+        <img src='' alt='Logo'>
+      </div>
+      <div id='site-header__site-name' class='flex-col ai-center'>
+        <div><nobr>Project Name</nobr></div>
+      </div>
+    {{/link-to}}
+  </div>
+
+  <div class='flex-row jc-center ai-center wrap'>
+    {{#link-to 'index' class='site-header__link'}}
+      <nobr>Guide</nobr>
+    {{/link-to}}
+  </div>
+
+  <div class='flex-col ai-center jc-center'>
+    <div class='flex-col jc-center ai-center' {{action (toggle 'showDropDownMenu' this)}}>
+      <img id='site-header__user-pic' src={{userPicUrl}} alt='User picture'>
+      <div id='site-header__menu-icon'>
+        {{fa-icon 'angle-down' size=3 class=(if showDropDownMenu 'rotate-180' 'rotate-0')}}
+      </div>
+    </div>
+    <div id='site-header__drop-down-menu' class={{if showDropDownMenu 'show' 'hide'}}>
+      <div class='site-header__drop-down-menu__item' {{action (pipe (toggle 'showDropDownMenu' this) (action 'openLink' globals.githubDirksStyleTemplateUrl))}}>
+        Github
+      </div>
+  </div>
+
+</div>"}}
+
+            </div>
+        </div>
+    </div>
+
+</div>

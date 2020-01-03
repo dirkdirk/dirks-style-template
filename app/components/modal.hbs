@@ -1,0 +1,18 @@
+{{!-- With onClick={{@closeAction}} on #modal-wrapper and #modal-body allows for
+      clicking anywhere on screen (except the body) to close the modal.  --}}
+<div id='modal-wrapper' class='fade-in--fast' onClick={{@closeAction}}>
+
+    <div id='modal' class={{class}}>
+
+        <div id='modal-title' class='flex-row jc-between'>
+            <div>{{title}}</div>
+            <div class='text-danger'>{{fa-icon 'times'}}</div>
+        </div>
+
+        <div id='modal-body' onClick={{@closeAction}}>
+            {{yield}}
+        </div>
+
+    </div>
+
+</div>

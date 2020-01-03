@@ -1,0 +1,176 @@
+<div class='flex-col ai-center fade-in--fast'>
+
+    <div id='route-title'>Dirk's Style Framework</div>
+
+    <div class='content-div-wrapper'>
+        <div class='content-div content-div--full-width'>
+            <div class='content-div__title'>
+                What the ...
+            </div>
+            <div class='content-div__content'>
+                <h2>Goal</h2>
+                <p>Provide a style framework for Ember apps that is</p>
+                <ul>
+                    <li>lightweight</li>
+                    <li>customizable</li>
+                    <li>maintainable and easy to update</li>
+                    <li>expandable for larger projects</li>
+                    <li>simpler than Bootstrap or Foundation</li>
+                </ul>
+                <p>Dirk's Style Template provides</p>
+                <ul>
+                    <li>instructions on how to get the code into your project</li>
+                    <li>{{link-to 'a responsive header for your app' 'header'}}</li>
+                </ul>
+                <h2 class='mt40'>Who and What For</h2>
+                <p>Ideal for</p>
+                <ul>
+                    <li>rapid prototyping</li>
+                    <li>quickly setting up custom styles</li>
+                    <li>smallish Ember apps (yet easy to expand)</li>
+                </ul>
+                <p>Shortcomings</p>
+                <ul>
+                    <li>not as comprehensive as Bootstrap or Foundation</li>
+                </ul>
+                <h2 class='mt40'>How To</h2>
+                <p>First browse this site and {{globals.githubDirksStyleTemplateLink}} to learn how Dirk's Style Framework works and is setup.</p>
+                <p>Install depent and optional Ember Addons.</p>
+                <ol>
+                    <li>All dependent and optional Ember Addons are listed below under JS Framework.</li>
+                    <li>Click the link to their Github page and follow all their installation instructions.</li>
+                    <li>See this site's {{globals.githubNpmPackageLink}}</li>
+                </ol>
+                <p>Add the styles / components / helpers to your site.</p>
+                <ol>
+                    <li>For the style sheets:</li>
+                    <ul>
+                        <li>Install and setup {{globals.emberCliSassLink}}.</li>
+                    </ul>
+                    <li>For helpers and components:</li>
+                    <ul>
+                        <li>CLI generate the desired helper or component files.</li>
+                    </ul>
+                    <li>Access Dirk's Style Framework code:</li>
+                    <ul>
+                        <li>Fork, download or browse the project code from {{globals.githubDirksStyleTemplateLink}}.</li>
+                    </ul>
+                    <li>Copy and paste the {{globals.githubStylesDir}},  {{globals.githubComponentsDir}} or {{globals.githubHelpersDir}} code into your files.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class='content-div-wrapper'>
+        <div class='content-div--left'>
+            <div class='content-div'>
+                <div class='content-div__title'>
+                    JS Framework
+                </div>
+                <div class='content-div__content'>
+
+                    <h2>Ember</h2>
+                    <p>Built with the {{globals.emberjsLink}} (3.8.3) framework.</p>
+
+                    <h2 class='mt40'>Ember Dependency Addons</h2>
+                    <p>{{globals.emberCliSassLink}}</p>
+                    <p>{{globals.emberFontAwesomeLink}}</p>
+                    <p>{{globals.emberComposableHelpersLink}}</p>
+
+                    <h2 class='mt40'>Ember Optional Addons</h2>
+                    <p>{{globals.emberCliFlashLink}}</p>
+                    <p>{{globals.emberToolTips}}</p>
+                    <p>{{globals.emberLineClampLink}}</p>
+                    <p>{{globals.emberPowerSelectLink}}</p>
+                    <p>{{globals.emberCliClipboardLink}}</p>
+                    <p>{{globals.emberCollapsiblePanelLink}}</p>
+                    <p>{{globals.dateComponentsLink}}</p>
+                    <p>{{globals.emberMomentLink}}</p>
+
+                    <h2 class='mt40'>Github and NPM Package</h2>
+                    <p>Dirk's Style Framework on {{globals.githubDirksStyleTemplateLink}}</p>
+                    <p>See this site's {{globals.githubNpmPackageLink}}</p>
+                </div>
+            </div>
+        </div>
+        <div class='content-div--right'>
+            <div class='content-div'>
+                <div class='content-div__title'>
+                    Docs & Tools
+                </div>
+                <div class='content-div__content'>
+                    <h2>Docs and Guides</h2>
+                    <p>{{globals.sassDocsLink}}</p>
+                    <p>{{globals.flexGuideLink}}</p>
+                    <p>{{globals.gridGuideLink}}</p>
+                    <p>{{globals.freeFontAwesomeFontsLink}}</p>
+                    <p>{{globals.emberPowerSelectDocsLink}}</p>
+                    <p>{{globals.emberCollapsiblePanelDocsLink}}</p>
+                    <p>{{globals.emberComposableHelpersDocsLink}}</p>
+                    <p>{{globals.dateComponentsGuideLink}}</p>
+                    <p>{{globals.momentjsDocsLink}}</p>
+                    <h2 class='mt40'>Tools</h2>
+                    <p>{{globals.githubLink}}</p>
+                    <p>{{globals.firebaseLink}}</p>
+                    <p>{{globals.localHostLink}}</p>
+                    <p>{{globals.emberTwiddleLink}}</p>
+                    <p>{{globals.playCodeLink}}</p>
+                    <p>{{globals.devDocsLink}}</p>
+                    <h2 class='mt40'>Very Useful Ember Addons</h2>
+                    <p>{{globals.emberTruthHelpersLink}}</p>
+                    <p>{{globals.emberAwesomeMacrosLink}}</p>
+                    <p>{{globals.emberMacroHelpersLink}}</p>
+                    <p>{{globals.emberChangesetLink}}</p>
+                    <p>{{globals.emberScreenLink}}</p>
+                    <p>{{globals.emberRouterScrollLink}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class='content-div-wrapper'>
+        <div class='content-div content-div--full-width'>
+            <div class='content-div__title'>
+                 This .scss Guide
+            </div>
+            <div class='content-div__content mb10'>
+                <h2>Normalize and Reset</h2>
+                <p>{{globals.githubNormalizeLink}} v8.0.1 is imported first. It is slightly modified: {{globals.githubStylesNormalizeLink}}.</p>
+                <p>A local {{globals.githubStylesResetLink}} is imported next.</p>
+
+                <h2 class='mt40'>Variables</h2>
+                <p>{{globals.githubStylesVariablesLink}} defines almost all style settings.</p>
+
+                <h2 class='mt40'>App</h2>
+                <p>{{globals.githubStylesAppLink}} defines HTML block elements as well as the site's header, content, and footer styles with the exception of buttons and inputs, which have their own files.</p>
+
+                <h2 class='mt40'>Imports</h2>
+                <p>Each import contains only definitions for the specific element(s) or component implied by its title.</p>
+
+                <h2 class='mt40'>Project Specific Styles</h2>
+                <p>styles/_project.scss is a single file to keep definitions for very small projects. As this file grows consider breaking it into smaller more manageable files.</p>
+
+                <h2 class='mt40'>Helper Classes</h2>
+                <p>{{globals.githubStylesHelpersLink}} contains many class definitions of commonly used styles. See {{#link-to 'layout'}}Layout{{/link-to}} and the file itself for class definitions and usage.</p>
+
+                <h2 class='mt40'>BEM</h2>
+                <p><b>B</b>lock <b>E</b>lement <b>M</b>odifier naming convention is used in the .scss files.</p>
+                <p>See {{globals.bem101}} for a nice introduction.</p>
+                <h3>Block component</h3>
+                {{show-code code='.btn {}'}}
+                <h3>Element - depends on the block</h3>
+                {{show-code code='.btn__price {}'}}
+                <h3>Modifier - changes the style</h3>
+                {{show-code code='.btn--warn {}
+.btn__price--success {}'}}
+                <h3>With SASS we can:</h3>
+                {{show-code code='.btn {
+  @at-root #{&}__price { }
+  @at-root #{&}--warn { }
+  @at-root #{&}__price--success { }
+}'}}
+            </div>
+        </div>
+    </div>
+
+</div>

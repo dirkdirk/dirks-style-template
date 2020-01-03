@@ -1,0 +1,298 @@
+<div class='flex-col ai-center fade-in--fast'>
+
+    <div id='route-title'>The Others</div>
+
+    <div class='content-div-wrapper'>
+        <div class='content-div--left'>
+            <div class='content-div'>
+                <div class='content-div__title'>
+                    Animations
+                </div>
+                <div class='content-div__content'>
+                    <h2>Introduction</h2>
+                    <p>Animation speed variables are set in {{globals.githubStylesVariablesLink}}.</p>
+                    <p>More customization is defined in {{globals.githubStylesAnimationsLink}}</p>
+                    <h2 class='mt40'>Show / Hide</h2>
+                    <button
+                    {{action (pipe
+                        (action (mut showDemo) (if showDemo false true))
+                        (action (mut showDemoFast) false)
+                        (action (mut showDemoSlow) false)
+                    )}}>
+                        {{if showDemo 'Hide' 'Show'}}
+                    </button>
+                    <button
+                    {{action (pipe
+                        (action (mut showDemoFast) (if showDemoFast false true))
+                        (action (mut showDemo) false)
+                        (action (mut showDemoSlow) false)
+                    )}}>
+                        {{if showDemoFast 'Hide fast' 'Show fast'}}
+                    </button>
+                    <button
+                    {{action (pipe
+                        (action (mut showDemoSlow) (if showDemoSlow false true))
+                        (action (mut showDemoFast) false)
+                        (action (mut showDemo) false)
+                    )}}>
+                        {{if showDemoSlow 'Hide slow' 'Show slow'}}
+                    </button>
+                    <div class={{concat 'show-hide-demo-div' (if showDemo ' show' ' hide')}}>
+                        <div class='m20 p1rem b1green show-hide-demo-div--opaq-bg'>
+                            <b>Boo here I am!</b>
+                        </div>
+                    </div>
+                    <div class={{concat 'flex-row jc-center show-hide-demo-div' (if showDemoFast ' show--fast' ' hide--fast')}}>
+                        <div class='m20 p1rem b1blue show-hide-demo-div--opaq-bg'>
+                            <b>Fast I am here!</b>
+                        </div>
+                    </div>
+                    <div class={{concat 'flex-row jc-center show-hide-demo-div' (if showDemoSlow ' show--slow' ' hide--slow')}}>
+                        <div class='m20 p1rem b1red show-hide-demo-div--opaq-bg'>
+                            <b>I am slooow.</b>
+                        </div>
+                    </div>
+
+                    <h2 class='mt40'>Fade-In / Fade-Out</h2>
+
+                    <table>
+                        <tr>
+                            <td>
+                                <button class='width-100' {{action (toggle 'fadeInDemo' this)}}>{{if fadeInDemo 'Hide' 'In'}}</button>
+                            </td>
+                            <td>
+                                <p class={{concat 'plr1rem' (if fadeInDemo ' fade-in' ' hide--fast')}}>.fade-in</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button class='width-100' {{action (toggle 'fadeOutDemo' this)}}>{{if fadeOutDemo 'Reset' 'Out'}}</button>
+                            </td>
+                            <td>
+                                <p class={{concat 'plr1rem' (if fadeOutDemo ' fade-out' ' show')}}>.fade-out</p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <button class='width-100' {{action (toggle 'fadeInFastDemo' this)}}>{{if fadeInFastDemo 'Hide' 'In Fast'}}</button>
+                            </td>
+                            <td>
+                                <p class={{concat 'plr1rem' (if fadeInFastDemo ' fade-in--fast' ' hide--fast')}}>.fade-in--fast</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button class='width-100' {{action (toggle 'fadeOutFastDemo' this)}}>{{if fadeOutFastDemo 'Reset' 'Out Fast'}}</button>
+                            </td>
+                            <td>
+                                <p class={{concat 'plr1rem' (if fadeOutFastDemo ' fade-out--fast' ' show')}}>.fade-out--fast</p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <button class='width-100' {{action (toggle 'fadeInSlowDemo' this)}}>{{if fadeInSlowDemo 'Hide' 'In Slow'}}</button>
+                            </td>
+                            <td>
+                                <p class={{concat 'plr1rem' (if fadeInSlowDemo ' fade-in--slow' ' hide--fast')}}>.fade-in--slow</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button class='width-100' {{action (toggle 'fadeOutSlowDemo' this)}}>{{if fadeOutSlowDemo 'Reset' 'Out Slow'}}</button>
+                            </td>
+                            <td>
+                                <p class={{concat 'plr1rem' (if fadeOutSlowDemo ' fade-out--slow' ' show')}}>.fade-out--slow</p>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <h2 class='mt40'>Rotate</h2>
+                    {{show-code code="{{fa-icon 'angle-down' size=3 class=(if isRotate 'rotate-180' 'rotate-0')}}"}}
+                    <h3>Result</h3>
+                    <button {{action (toggle 'isRotate' this)}}>Rotate</button>
+                    <div class='plr1rem'>
+                        {{fa-icon 'angle-down' size=3 class=(if isRotate 'rotate-180' 'rotate-0')}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='content-div--right'>
+            <div class='content-div'>
+                <div class='content-div__title'>
+                    Flash Messages
+                </div>
+                <div class='content-div__content'>
+                    <h2>Introduction</h2>
+                    <p>The {{globals.emberCliFlashLink}} addon provides an easy to use messenger service.</p>
+                    <p>Copy and paste the flash-message-div code from {{globals.githubTemplatesApplicationLink}} into your application template.</p>
+                    <p>Variables are set in {{globals.githubStylesVariablesLink}}. Additional definitions can be set in {{globals.githubStylesFlashMessagesLink}}.</p>
+                    <p>See {{globals.emberCliFlashLink}} for many more options.</p>
+                    <h2 class='mt40'>Transient</h2>
+                    <div class='flex-col ai-center'>
+                        <p><button class='width-150' {{action 'infoFlashMessage'}}>Info</button></p>
+                        <p><button class='width-150' {{action 'successFlashMessage'}}>Success</button></p>
+                        <p><button class='width-150' {{action 'warnFlashMessage'}}>Warn</button></p>
+                        <p><button class='width-150' {{action 'dangerFlashMessage'}}>Danger</button></p>
+                    </div>
+                    <h2 class='mt40'>Sticky</h2>
+                    <div class='flex-col ai-center'>
+                        <p><button class='width-150' {{action 'stickyFlashMessage'}}>Sticky</button></p>
+                        <p>Click the message to close it.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class='content-div-wrapper'>
+        <div class='content-div content-div--full-width'>
+            <div class='content-div__title'>
+                Data Badges
+            </div>
+            <div class='content-div__content mb10'>
+                <h2>Introduction</h2>
+                <p>Data Badges is a component. To duplicate it:</p>
+                <ol>
+                    <li>At the command prompt type:<br><code>ember generate component data-badge</code></li>
+                    <li>Copy and paste the code from: {{globals.githubTemplatesComponentsDataBadgeLink}}</li>
+                </ol>
+                {{show-code code="<div class='flex-row jc-evenly'>
+  <DataBadge @label='Final Answer' @data='42' />
+  <DataBadge @label='James' @data='007' />
+</div>"}}
+                <h3>Result</h3>
+                <div class='flex-row jc-evenly'>
+                    <DataBadge @label='Final Answer' @data='42' />
+                    <DataBadge @label='James' @data='007' />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class='content-div-wrapper'>
+        <div class='content-div content-div--full-width'>
+            <div class='content-div__title'>
+                Collapsible Panel
+            </div>
+            <div class='content-div__content mb10'>
+                <h2>Introduction</h2>
+                <p>The {{globals.emberCollapsiblePanelLink}} addon has many useful applications. Below is an example of an accordion collapsible panel.</p>
+                <p>See {{globals.emberCollapsiblePanelDocsLink}} for more examples and code.</p>
+                <div class='width-50pct mt20'>
+                    {{#cp-panels accordion=true as |panels|}}
+                        {{#panels.panel as |panel|}}
+                            {{#panel.toggle}}
+                                <p>Panel A</p>
+                            {{/panel.toggle}}
+                            {{#panel.body}}
+                                <div>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo repellendus nisi asperiores esse aperiam aliquid nulla ad dolor autem neque, nihil inventore temporibus delectus earum facere corporis, quam ipsum maxime.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus neque magnam, hic quis beatae repellendus harum modi pariatur minus quidem alias! Eius incidunt impedit eaque, est, illo officiis expedita molestiae.</p>
+                                </div>
+                            {{/panel.body}}
+                        {{/panels.panel}}
+
+                        {{#panels.panel as |panel|}}
+                            {{#panel.toggle}}
+                                <p>Panel B</p>
+                            {{/panel.toggle}}
+                            {{#panel.body}}
+                                <div>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo repellendus nisi asperiores esse aperiam aliquid nulla ad dolor autem neque, nihil inventore temporibus delectus earum facere corporis, quam ipsum maxime.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus neque magnam, hic quis beatae repellendus harum modi pariatur minus quidem alias! Eius incidunt impedit eaque, est, illo officiis expedita molestiae.</p>
+                                </div>
+                            {{/panel.body}}
+                        {{/panels.panel}}
+                    {{/cp-panels}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class='content-div-wrapper'>
+        <div class='content-div content-div--full-width'>
+            <div class='content-div__title'>
+                Modal
+            </div>
+            <div class='content-div__content mb10'>
+                <h2>Introduction</h2>
+                <p>Modal is a component. To duplicate it:</p>
+                <ol>
+                    <li>At the command prompt type:<br><code>ember generate component modal</code></li>
+                    <li>Copy and paste the code from: {{globals.githubTemplatesComponentsModalLink}}</li>
+                    <li>Copy and paste the style variables definitions from {{globals.githubStylesVariablesLink}} into your scss files.</li>
+                    <li>Copy and paste the style definitions from {{globals.githubStylesModalLink}} into your scss files.</li>
+                </ol>
+                <p>Edit the _variables.scss and modal.scss files to change the look and feel.</p>
+                {{show-code code="{{#if showModal}}
+  <#Modal
+    @title='Demo Modal Title'
+    @class='width-sm' // width-med | width-lg
+    @closeAction={{action (toggle 'showModal' this)}}>
+    Modal content goes here ...
+  </Modal>
+{{/if}}"}}
+                <h3>Result</h3>
+                <div class='flex-row jc-center'><button class='width-150' {{action (toggle 'showModal' this)}}>Show modal</button></div>
+                {{#if showModal}}
+                    <#Modal @title='Demo Modal Title' @class='width-sm' @closeAction={{action (toggle 'showModal' this)}}>
+                        <p>Modal content goes here ...</p>
+                    </Modal>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+
+    <div class='content-div-wrapper'>
+        <div class='content-div content-div--full-width'>
+            <div class='content-div__title'>
+                Tool Tip
+            </div>
+            <div class='content-div__content mb10'>
+                <h2>Info</h2>
+                <p>{{globals.emberToolTips}} provides a slick API to quickly and easily add tooltips to elements.</p>
+                {{show-code code="<div class='p1rem b1green>
+  Hover here for tooltip.
+  {{ember-tooltip text='Here is more info!'}}
+</div>"}}
+                <h3>Result</h3>
+                <div class='flex-col ai-center'>
+                    <div class='p1rem b1green'>
+                        Hover or tap for tooltip.
+                        {{ember-tooltip text='Here is more info!'}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class='content-div-wrapper'>
+        <div class='content-div content-div--full-width'>
+            <div class='content-div__title'>
+                CopyButton
+            </div>
+            <div class='content-div__content mb10'>
+                <h2>Info</h2>
+                <p>{{globals.emberCliClipboardLink}} is a handy and easy to use addon. See their Github page for more options.</p>
+                {{show-code code="<CopyButton
+    @clipboardText='ember install ember-cli-clipboard'
+    @success={{action 'copyButtonSuccess'}}
+    title='Copy to clipboard'>
+  ember install ember-cli-clipboard {{fa-icon 'copy'}}
+</CopyButton>"}}
+                <h3>Result</h3>
+                <div class='flex-col ai-center'>
+                    <CopyButton
+                        @clipboardText='Text to copy to clipboard.'
+                        @success={{action 'copyButtonSuccess'}}
+                        title='Copy to clipboard'>
+                      Text to copy to clipboard. {{fa-icon 'copy'}}
+                    </CopyButton>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
