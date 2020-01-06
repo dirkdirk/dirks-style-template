@@ -103,27 +103,6 @@
                     </div>
                 </div>
 
-                <div class='content-div'>
-                    <div class='content-div__title'>
-                         Working Fa Icon
-                    </div>
-                    <div class='content-div__content'>
-                        <h2>Introduction</h2>
-                        <p>A simple spinner to indicate the app is working.</p>
-                        {{show-code code="{{if isWorking}}
-  <div class='is-working-div'>
-    {{fa-icon 'refresh' size=3 spin=true}}
-  </div>
-{{/if}}"}}
-                        <h3>Result</h3>
-                        <div class='flex-row jc-center mt10 mb20'>
-                            <button class='mtb20' {{action (toggle 'isWorking' this)}}>{{if isWorking 'Stop working' 'Start working'}}</button>
-                        </div>
-                        <div class={{concat 'flex-row jc-center mtb20 is-working-div' (if isWorking ' show' ' hide')}}>
-                            {{fa-icon 'refresh' size=3 spin=true}}
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -133,6 +112,8 @@
                      Font Awesome
                 </div>
                 <div class='content-div__content'>
+                    <h2>Introduction</h2>
+                    <p>The {{globals.emberFontAwesomeLink}} addon provides access to paid and {{globals.freeFontAwesomeFontsLink}} icons.</p>
                     <h2>Plain Jane</h2>
                         {{show-code code="{{fa-icon 'cog'}}
 {{fa-icon 'angle-down'}}
@@ -253,8 +234,29 @@
 
                 </div>
             </div>
+
+            <div class='content-div'>
+                <div class='content-div__title'>
+                     Working Fa Icon
+                </div>
+                <div class='content-div__content'>
+                    <h2>Introduction</h2>
+                    <p>A simple spinner to indicate the app is working.</p>
+                    {{show-code code="{{if isWorking}}
+<div class='is-working-div'>
+{{fa-icon 'refresh' size=3 spin=true}}
+</div>
+{{/if}}"}}
+                    <h3>Result</h3>
+                    <div class='flex-row jc-center mt10 mb20'>
+                        <button class='mtb20' {{action (toggle 'isWorking' this)}}>{{if isWorking 'Stop working' 'Start working'}}</button>
+                    </div>
+                    <div class={{concat 'flex-row jc-center mtb20 is-working-div' (if isWorking ' show' ' hide')}}>
+                        {{fa-icon 'refresh' size=3 spin=true}}
+                    </div>
+                </div>
+            </div>
+
         </div>
-
     </div>
-
 </div>

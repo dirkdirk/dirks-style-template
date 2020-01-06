@@ -20,7 +20,7 @@
                 <p>Dirk's Style Template provides</p>
                 <ul>
                     <li>instructions on how to get the code into your project</li>
-                    <li>{{link-to 'a responsive header for your app' 'header'}}</li>
+                    <li><LinkTo @route='header'>a responsive header for your app</LinkTo></li>
                 </ul>
                 <h2 class='mt40'>Who and What For</h2>
                 <p>Ideal for</p>
@@ -151,7 +151,7 @@
                 <p>styles/_project.scss is a single file to keep definitions for very small projects. As this file grows consider breaking it into smaller more manageable files.</p>
 
                 <h2 class='mt40'>Helper Classes</h2>
-                <p>{{globals.githubStylesHelpersLink}} contains many class definitions of commonly used styles. See {{#link-to 'layout'}}Layout{{/link-to}} and the file itself for class definitions and usage.</p>
+                <p>{{globals.githubStylesHelpersLink}} contains many class definitions of commonly used styles. See <LinkTo @route='layout'>Layout</LinkTo> and the file itself for class definitions and usage.</p>
 
                 <h2 class='mt40'>BEM</h2>
                 <p><b>B</b>lock <b>E</b>lement <b>M</b>odifier naming convention is used in the .scss files.</p>

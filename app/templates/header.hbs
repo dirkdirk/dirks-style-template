@@ -24,20 +24,20 @@
                 {{show-code code="<div id='site-header' class='flex-row jc-between fade-in--fast'>
 
   <div class='flex-col ai-center jc-center'>
-    {{#link-to 'index'}}
+    <LinkTo @route='index'>
       <div id='site-header__logo'>
         <img src='' alt='Logo'>
       </div>
       <div id='site-header__site-name' class='flex-col ai-center'>
         <div><nobr>Project Name</nobr></div>
       </div>
-    {{/link-to}}
+    </LinkTo>
   </div>
 
   <div class='flex-row jc-center ai-center wrap'>
-    {{#link-to 'index' class='site-header__link'}}
+    <LinkTo @route='index' class='site-header__link'>
       <nobr>Guide</nobr>
-    {{/link-to}}
+    </LinkTo>
   </div>
 
   <div class='flex-col ai-center jc-center'>

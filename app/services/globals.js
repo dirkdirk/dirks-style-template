@@ -38,7 +38,7 @@ export default class GlobalsService extends Service {
     get sassDocsLink() { return htmlSafe("<a href='https://sass-lang.com/documentation' target='_blank'>SASS Docs</a>") }
     get flexGuideLink() { return htmlSafe("<a href='https://css-tricks.com/snippets/css/a-guide-to-flexbox/' target='_blank'>A Complete Guide to Flexbox</a>") }
     get gridGuideLink() { return htmlSafe("<a href='https://css-tricks.com/snippets/css/complete-guide-grid/' target='_blank'>A Complete Guide to Grid</a>") }
-    get freeFontAwesomeFontsLink() { return htmlSafe("<a href='https://fontawesome.com/icons?d=gallery&m=free'>Free Font Awesome Fonts</a>") }
+    get freeFontAwesomeFontsLink() { return htmlSafe("<a href='https://fontawesome.com/icons?d=gallery&m=free' target='_blank'>Free Font Awesome Fonts</a>") }
     get emberPowerSelectDocsLink() { return htmlSafe("<a href='https://ember-power-select.com/docs/installation' target='_blank'>Ember Power Select Docs</a>") }
     get emberCollapsiblePanelDocsLink() { return htmlSafe("<a href='http://adopted-ember-addons.github.io/ember-collapsible-panel/' target='_blank'>Ember Collapsible Panel Docs</a>") }
     get emberComposableHelpersDocsLink() { return htmlSafe("<a href='https://github.com/DockYard/ember-composable-helpers#available-helpers' target='_blank'>Ember Composable Helpers Docs</a>") }

@@ -3,47 +3,65 @@
     <div id='route-title'>Inputs</div>
 
     <div class='content-div-wrapper'>
-        <div class='content-div--left'>
-            <div class='content-div'>
-                <div class='content-div__title'>
-                    Input Elements
-                </div>
-                <div class='content-div__content'>
+        <div class='content-div content-div--full-width'>
+            <div class='content-div__title'>
+                Input Elements
+            </div>
+            <div class='content-div__content'>
 
-                    <h2>Introduction</h2>
-                    <p>Define input variables in the styles/_variables.scss file.</p>
+                <h2>Introduction</h2>
+                <p>Define input variables in the styles/_variables.scss file.</p>
 
-                    <p>Inputs' styles are completely reset by {{globals.githubStylesNormalizeLink}} and {{globals.githubStylesResetLink}}.</p>
-                    <p>Input styling variables are defined in the {{globals.githubStylesVariablesLink}} file and applied in the {{globals.githubStylesInputsLink}} file.</p>
-                    <p>Customize your buttons by first editing the variables in styles/_variables.scss and then editing inputs.scss for fine grained control.</p>
-                    <p>Below is how each element looks with the current style definitions.</p>
+                <p>Inputs' styles are completely reset by {{globals.githubStylesNormalizeLink}} and {{globals.githubStylesResetLink}}.</p>
+                <p>Input styling variables are defined in the {{globals.githubStylesVariablesLink}} file and applied in the {{globals.githubStylesInputsLink}} file.</p>
+                <p>Customize your buttons by first editing the variables in styles/_variables.scss and then editing inputs.scss for fine grained control.</p>
+                <p>Below is how each element looks with the current style definitions.</p>
 
-                    <h2 class='mt40'>Default Input</h2>
-                    {{show-code code="{{input placeholder='Text input ...'}}"}}
-                    <h3>Result</h3>
-                    <p>{{input placeholder='Text input ...'}}</p>
+                <h2 class='mt40'>Default Input</h2>
+                {{show-code code="<Input @placeholder='Text input ...' />"}}
+                <h3>Result</h3>
+                <p><Input @placeholder='Text input ...' /></p>
 
-                    <h2 class='mt40'>Medium Width</h2>
-                    {{show-code code="{{input class='input--med-width' placeholder='Text input ...'}}"}}
-                    <h3>Result</h3>
-                    <p>{{input class='input--med-width' placeholder='Text input ...'}}</p>
+                <h2 class='mt40'>Medium Width</h2>
+                {{show-code code="<Input class='input--med-width' @placeholder='Text input ...' />"}}
+                <h3>Result</h3>
+                <p><Input class='input--med-width' @placeholder='Text input ...' /></p>
 
-                    <h2 class='mt40'>Small Width</h2>
-                    {{show-code code="{{input class='input--small-width' placeholder='Input..'}}"}}
-                    <h3>Result</h3>
-                    <p>{{input class='input--small-width' placeholder='Input..'}}</p>
+                <h2 class='mt40'>Small Width</h2>
+                {{show-code code="<Input class='input--small-width' @placeholder='Input..' />"}}
+                <h3>Result</h3>
+                <p><Input class='input--small-width' @placeholder='Input..' /></p>
 
-                    <h2 class='mt40'>Disabled</h2>
-                    {{show-code code="{{input disabled=true placeholder='Disabled ...'}}"}}
-                    <h3>Result</h3>
-                    <p>{{input disabled=true placeholder='Disabled ...'}}</p>
-                </div>
+                <h2 class='mt40'>Disabled</h2>
+                {{show-code code="<Input disabled=true @placeholder='Disabled ...' />"}}
+                <h3>Result</h3>
+                <p><Input disabled=true @placeholder='Disabled ...' /></p>
+
+                <h2 class='mt40'>Labeled Inputs</h2>
+                {{show-code code="<div class='input__labeled-div'>
+  <div class='input__labeled--label'>Full Name*</div>
+  <div class='input-div'>
+    <Input @placeholder='Text input ...' />
+  </div>
+</div>"}}
+                <h3>Result</h3>
+                <p>
+                    <div class='input__labeled-div'>
+                        <div class='input__labeled--label'>Full Name*</div>
+                        <div class='input-div'>
+                            <Input @placeholder='Text input ...' />
+                        </div>
+                    </div>
+                </p>
+
             </div>
         </div>
 
-        <div class='content-div-wrapper'>
+        {{!-- ------------------------------------------------------------ --}}
+        {{!-- {{date-picker}} not working with Ember 3.15.0 right now.  Will try to fix at some point. --}}
+        {{!-- <div class='content-div-wrapper'>
             <div class='content-div--right'>
-                {{!-- <div class='content-div'>
+                <div class='content-div'>
                     <div class='content-div__title'>
                         Date Ranges
                     </div>
@@ -65,33 +83,11 @@ action=(action 'setDateRange')}}"}}
                             {{date-picker action=(action 'setDateRange')}}
                         </p>
                     </div>
-                </div> --}}
-                <div class='content-div'>
-                    <div class='content-div__title'>
-                        Labeled Inputs
-                    </div>
-                    <div class='content-div__content'>
-                        <h2>Introduction</h2>
-                        <p>Follow the code pattern below and add the code from styles/input.scss for a super simple and lightweight labeled input element.</p>
-                        {{show-code code="<div class='input__labeled-div'>
-  <div class='input__labeled--label'>Full Name*</div>
-  <div class='input-div'>
-    {{input placeholder='Text input ...'}}
-  </div>
-</div>"}}
-                        <h3>Result</h3>
-                        <p>
-                            <div class='input__labeled-div'>
-                                <div class='input__labeled--label'>Full Name*</div>
-                                <div class='input-div'>
-                                    {{input placeholder='Text input ...'}}
-                                </div>
-                            </div>
-                        </p>
-                    </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
+        {{!-- ------------------------------------------------------------ --}}
+
     </div>
 
     <div class='content-div-wrapper'>
@@ -110,7 +106,7 @@ action=(action 'setDateRange')}}"}}
   @options={{powerSelectOptions}}
   @selected={{powerSelectSelected}}
   @onChange={{action (mut powerSelectSelected)}}
-  @placeholder='Select ...'
+  @@placeholder='Select ...'
   as |k|>
   {{k}}
 </PowerSelect>"}}
@@ -121,7 +117,7 @@ action=(action 'setDateRange')}}"}}
                         @options={{powerSelectOptions}}
                         @selected={{powerSelectSelected}}
                         @onChange={{action (mut powerSelectSelected)}}
-                        @placeholder='Select ...'
+                        @@placeholder='Select ...'
                         as |k|>
                         {{k}}
                     </PowerSelect>
@@ -133,7 +129,7 @@ action=(action 'setDateRange')}}"}}
   @options={{powerSelectOptions}}
   @selected={{powerSelectSelected}}
   @onChange={{action (mut powerSelectSelected)}}
-  @placeholder='Select ...'
+  @@placeholder='Select ...'
   as |k|>
   {{k}}
 </PowerSelect>"}}
@@ -145,7 +141,7 @@ action=(action 'setDateRange')}}"}}
                         @options={{powerSelectOptions}}
                         @selected={{powerSelectSelected}}
                         @onChange={{action (mut powerSelectSelected)}}
-                        @placeholder='Select ...'
+                        @@placeholder='Select ...'
                         as |k|>
                         {{k}}
                     </PowerSelect>

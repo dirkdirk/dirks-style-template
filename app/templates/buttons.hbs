@@ -40,18 +40,18 @@
                 <button class='button--danger'>Danger</button>
 
                 <h2 class='mt40'>Link-to Button</h2>
-                {{show-code code="{{#link-to 'index'}}
+                {{show-code code="<LinkTo @route='index'>
   <button>Guide</button>
-{{/link-to}}"}}
+</LinkTo>"}}
                 <h3>Result</h3>
-                {{#link-to 'index'}}<button>Guide</button>{{/link-to}}
+                <LinkTo @route='index'><button>Guide</button></LinkTo>
 
                 <h2 class='mt40'>Link-to active Button</h2>
-                {{show-code code="{{#link-to 'buttons'}}
+                {{show-code code="<LinkTo @route='buttons'>
   <button>Buttons</button>
-{{/link-to}}"}}
+</LinkTo>"}}
                 <h3>Result</h3>
-                {{#link-to 'buttons'}}<button>Buttons</button>{{/link-to}}
+                <LinkTo @route='buttons'><button>Buttons</button></LinkTo>
 
                 <h2 class='mt40'>FA Icons Buttons</h2>
                 {{show-code code="<button class='button--fa-icon button--danger'>
