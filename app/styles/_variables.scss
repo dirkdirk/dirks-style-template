@@ -11,7 +11,7 @@ $primary-darker-color:   color.scale($primary-base-color, $lightness: -15%);
 $primary-darkest-color:  color.scale($primary-base-color, $lightness: -50%);
 $primary-black-color:    color.scale($primary-base-color, $lightness: -85%);
 
-// Info colors are used to indicate positive things.
+// Info colors are used to indicate informative things.
 $info-base-color:     #007bff;
 $info-lightest-color: color.scale($info-base-color, $lightness: 25%);
 $info-lighter-color:  color.scale($info-base-color, $lightness: 15%);
